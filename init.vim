@@ -1,4 +1,4 @@
-let mapleader=";"
+let mapleader="\<Space>"
 
 "pretty colors
 set termguicolors
@@ -72,22 +72,22 @@ let g:elm_format_fail_silently = 1
 let g:elm_format_two_spaces = 1
 let g:elm_setup_keybindings = 0
 
-au FileType elm nmap <leader>m <Plug>(elm-make)
-au FileType elm nmap <leader>n <Plug>(elm-make-main)
-au FileType elm nmap <leader>t <Plug>(elm-test)
-au FileType elm nmap <leader>r <Plug>(elm-repl)
-au FileType elm nmap <leader>e <Plug>(elm-error-detail)
-au FileType elm nmap <leader>d <Plug>(elm-show-docs)
-au FileType elm nmap <leader>b <Plug>(elm-browse-docs)
+au FileType elm nmap <leader>em <Plug>(elm-make)
+au FileType elm nmap <leader>ea <Plug>(elm-make-main)
+au FileType elm nmap <leader>et <Plug>(elm-test)
+au FileType elm nmap <leader>er <Plug>(elm-repl)
+au FileType elm nmap <leader>ed <Plug>(elm-error-detail)
+au FileType elm nmap <leader>ex <Plug>(elm-show-docs)
+au FileType elm nmap <leader>eb <Plug>(elm-browse-docs)
 
 let g:ycm_semantic_triggers = {
      \ 'elm' : ['.'],
      \}
 
 "---------------ALE
-nmap <silent> <leader>k <Plug>(ale_previous_wrap)
-nmap <silent> <leader>j <Plug>(ale_next_wrap)
-nmap <silent> <leader>e <Plug>(ale_detail)
+nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
+nmap <silent> <leader>an <Plug>(ale_next_wrap)
+nmap <silent> <leader>ad <Plug>(ale_detail)
 
 
 "---------------Plugs
