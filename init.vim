@@ -13,6 +13,13 @@ set softtabstop=4
 set tabstop=4
 set number
 
+"remap save to CTRL-s
+noremap <silent> <C-S>         :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
+noremap <silent> <C-Q>          :qa!<CR>
+vnoremap <silent> <C-Q>         <C-C>:qa!<CR>
+inoremap <silent> <C-Q>         <C-O>:qa!<CR>
 
 "rebind window switching
 nmap <silent> <c-k> :wincmd k<CR>
