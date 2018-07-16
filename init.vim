@@ -13,6 +13,8 @@ set softtabstop=4
 set tabstop=4
 set number
 
+"cursor line on insert mode
+:autocmd InsertEnter,InsertLeave * set cul!
 "remap save to CTRL-s
 noremap <silent> <C-S>         :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
