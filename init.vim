@@ -50,6 +50,20 @@ let g:netrw_winsize = 20
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 
+"-----------------silver searcher / ag
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " ----------options for solarized theme
 " default value is "normal", Setting this option to "high" or "low" does use the 
 " same Solarized palette but simply shifts some values up or down in order to 
@@ -70,7 +84,7 @@ let g:neosolarized_vertSplitBgTrans = 0
 let g:neosolarized_bold = 1
 let g:neosolarized_underline = 1
 let g:neosolarized_italic = 1
-set background=dark
+set background=light
 
 "--------------------elm
 let g:elm_jump_to_error = 1
@@ -113,6 +127,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'pangloss/vim-javascript'
+Plug 'milesza/ack.vim'
 call plug#end()
 
 colorscheme NeoSolarized
