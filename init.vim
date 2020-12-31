@@ -51,18 +51,18 @@ let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 
 "-----------------silver searcher / ag
-if executable('ag')
+"if executable('ag')
   " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
+"  set grepprg=ag\ --nogroup\ --nocolor
+"
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-let g:ackprg = 'ag --nogroup --nocolor --column'
+  "let g:ctrlp_use_caching = 0
+"endif
+"
+"let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " ----------options for solarized theme
 " default value is "normal", Setting this option to "high" or "low" does use the 
@@ -103,15 +103,14 @@ au FileType elm nmap <leader>ed <Plug>(elm-error-detail)
 au FileType elm nmap <leader>ex <Plug>(elm-show-docs)
 au FileType elm nmap <leader>eb <Plug>(elm-browse-docs)
 
-let g:ycm_semantic_triggers = {
-     \ 'elm' : ['.'],
-     \}
-
 "---------------ALE
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
 nmap <silent> <leader>ad <Plug>(ale_detail)
 
+
+"--------------Grepper
+nnoremap <leader>ga :Grepper -tool rg<cr>
 
 "---------------Plugs
 call plug#begin('~/.config/nvim/plugged')
@@ -128,7 +127,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'pangloss/vim-javascript'
-Plug 'milesza/ack.vim'
+Plug 'mhinz/vim-grepper'
+Plug 'vimwiki/vimwiki'
+Plug 'neovimhaskell/haskell-vim'
+"Plug 'mileszs/ack.vim'
+
 call plug#end()
 
 colorscheme NeoSolarized
